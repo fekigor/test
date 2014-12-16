@@ -31,26 +31,26 @@ $(document).ready(function() {
 						url: "verify.php",
 						data: dataString,
 						success: function(html) {
-							alert(html);
+							if (html == 'Right TEXT Entered') {
+								alert(html);
+									$.post("register.php", {
+									fname1: fname,
+									sname1: sname,
+									email1: email,
+									age1: age,
+									sex1: sex,
+									country1: country,
+									city1: city,
+									pcode1: pcode
+									}, function(data) {
+										if (data == 'You have Successfully Registered!') {
+											$("form")[0].reset();
+										}
+										alert(data);
+									});
+							} else {alert(html);}
 						}
-					});					
-					if (html == 'Right TEXT Entered') {
-						$.post("register.php", {
-							fname1: fname,
-							sname1: sname,
-							email1: email,
-							age1: age,
-							sex1: sex,
-							country1: country,
-							city1: city,
-							pcode1: pcode
-							}, function(data) {
-								if (data == 'You have Successfully Registered!') {
-									$("form")[0].reset();
-								}
-								alert(data);
-							});
-					}
+					});
 				}
 	});
 });

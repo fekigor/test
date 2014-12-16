@@ -11,11 +11,13 @@ font-size: 13px;
 }
 input[type=text],[type=password] {
 width: 50%;
-height: 22px;
+height: 25px;
 padding-left: 5px;
+padding-top: 1px;
+padding-bottom: 1px;
 border: 2px solid #5CFF00;
 color: #4f4f4f;
-font-size: 16px;
+font-size: 12px;
 }
 input.age{
 width: 20%;

@@ -105,35 +105,43 @@
 						rules: {
 							fname: {
 								required: true,
-								minlength: 2
+								minlength: 2,
+								maxlength: 128
 							},
 							sname: {
 								required: true,
-								minlength: 2
+								minlength: 2,
+								maxlength: 128
 							},
 							email: {
 								required: true,
-								email: true
+								email: true,
+								maxlength: 255
 							},
 							age: {
 								required: true,
-								minlength: 1
+								minlength: 1,
+								maxlength: 3
 							},
 							sex: {
 								required: true,
-								minlength: 1
+								minlength: 1,
+								maxlength: 55
 							},
 							country: {
 								required: true,
-								minlength: 2
+								minlength: 2,
+								maxlength: 128
 							},
 							city: {
 								required: true,
-								minlength: 2
+								minlength: 2,
+								maxlength: 128
 							},
 							pcode: {
 								required: true,
-								minlength: 2
+								minlength: 2,
+								maxlength: 30
 							}
 						},
 						messages: {

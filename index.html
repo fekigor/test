@@ -18,49 +18,49 @@
 					<div class="control-group">
 						<label class="control-label">Name</label>
 						<div class="controls">
-							<input type="text" class="form-control fname" id="fname" name="fname"  placeholder="Enter your first name." >
+							<input type="text" class="form-control fname" id="fname" name="fname"  placeholder="Enter your first name." required>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">Surname</label>
 						<div class="controls">
-							<input type="text" class="form-control sname" id="sname" name="sname"  placeholder="Enter your second name." >
+							<input type="text" class="form-control sname" id="sname" name="sname"  placeholder="Enter your second name." required>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">Email</label>
 						<div class="controls">
-							<input type="text" class="form-control" id="email" name="email"  placeholder="Enter your email address." >
+							<input type="text" class="form-control" id="email" name="email"  placeholder="Enter your email address." required>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">Age</label>
 						<div class="controls">
-							<input type="text" class="form-control age" id="age" name="age"  placeholder="Enter your age" >
+							<input type="text" class="form-control age" id="age" name="age"  placeholder="Enter your age" required>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">Sex</label>
 						<div class="controls">
-							<input type="text" class="form-control sex" id="sex" name="sex"  placeholder="male|female|others" >
+							<input type="text" class="form-control sex" id="sex" name="sex"  placeholder="male|female|others" required>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">Country</label>
 						<div class="controls">
-							<input type="text" class="form-control" id="country" name="country"  placeholder="Enter your country" >
+							<input type="text" class="form-control" id="country" name="country"  placeholder="Enter your country" required>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">City</label>
 						<div class="controls">
-							<input type="text" class="form-control" id="city" name="city"  placeholder="Enter your city" >
+							<input type="text" class="form-control" id="city" name="city"  placeholder="Enter your city" required>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">PostCode</label>
 						<div class="controls">
-							<input type="text" class="form-control" id="pcode" name="pcode"  placeholder="Enter your postcode" >
+							<input type="text" class="form-control" id="pcode" name="pcode"  placeholder="Enter your postcode" required>
 						</div>
 					</div>						
 					<div class="control-group">
@@ -91,25 +91,84 @@
 					</div>
 				</fieldset>
 				</form>
-<!-- Include JS File Here -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/registration.js"></script>
-<script>
-// just for the demos, avoids form submit
-jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
-$( "#regform" ).validate({
-  rules: {
-    email: {
-      required: true,
-      email: true
-    }
-  }
-});
-</script>
+				<!-- Include JS File Here -->
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+				<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+				<script type="text/javascript" src="js/registration.js"></script>
+				<script>
+					// just for the demos, avoids form submit
+					jQuery.validator.setDefaults({
+						debug: true,
+						success: "valid"
+					});
+					$( "#regform" ).validate({
+						rules: {
+							fname: {
+								required: true,
+								minlength: 2
+							},
+							sname: {
+								required: true,
+								minlength: 2
+							},
+							email: {
+								required: true,
+								email: true
+							},
+							age: {
+								required: true,
+								minlength: 1
+							},
+							sex: {
+								required: true,
+								minlength: 1
+							},
+							country: {
+								required: true,
+								minlength: 2
+							},
+							city: {
+								required: true,
+								minlength: 2
+							},
+							pcode: {
+								required: true,
+								minlength: 2
+							}
+						},
+						messages: {
+							fname: {
+								required: "Please enter your firstname",
+								minlength: "Your firstname must consist of at least 2 characters"
+							},
+							sname: {
+								required: "Please enter your surname",
+								minlength: "Your surname must consist of at least 2 characters"
+							},
+							email: "Please enter a valid email address",
+							age: {
+								required: "Please enter current age",
+								minlength: "Your current age must consist of at least 1 digit"
+							},
+							sex: {
+								required: "Please enter your sex",
+								minlength: "Must consist of at least 1 character"
+							},
+							country: {
+								required: "Please enter your country or country code",
+								minlength: "Country must consist of at least 2 characters"
+							},
+							city: {
+								required: "Please enter your city",
+								minlength: "City must consist of at least 2 characters"
+							},
+							pcode: {
+								required: "Please enter your postal code",
+								minlength: "Postal code must consist of at least 5 characters"
+							}
+						}						
+					});
+				</script>
 			</div>
 		</div>
 	</div>

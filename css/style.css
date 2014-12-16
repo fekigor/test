@@ -17,8 +17,11 @@ border: 2px solid #5CFF00;
 color: #4f4f4f;
 font-size: 16px;
 }
-input.age,input.sex{
+input.age{
 width: 20%;
+}
+input.sex{
+width: 25%;
 }
 input.fname,input.sname{
 width: 45%;

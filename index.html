@@ -7,16 +7,12 @@
 <!-- Include CSS File Here -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css"/> 
-<!-- Include JS File Here -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/registration.js"></script>
-<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 </head>
 <body>
 	<div class="container registration-container colorcontainer">
 		<div class="row">
 			<div class="span6">
-				<form role="form" method="post" action="#">
+				<form id="regform" role="form" method="post" action="#">
 				<fieldset>
 					<legend>Registration Form</legend>
 					<div class="control-group">
@@ -95,6 +91,25 @@
 					</div>
 				</fieldset>
 				</form>
+<!-- Include JS File Here -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/registration.js"></script>
+<script>
+// just for the demos, avoids form submit
+jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+$( "#regform" ).validate({
+  rules: {
+    email: {
+      required: true,
+      email: true
+    }
+  }
+});
+</script>
 			</div>
 		</div>
 	</div>

@@ -24,7 +24,6 @@ $(document).ready(function() {
 				} else if ((sname.length) < 2) {
 					alert("Surname should atleast 2 character in length...!");
 				} else {
-					alert("Captcha validation");
 					// Validating CAPTCHA with user input text.
 					var dataString = 'captcha=' + captcha;
 					$.ajax({
@@ -35,7 +34,23 @@ $(document).ready(function() {
 							alert(html);
 						}
 					});					
-
+					if (html == 'Right TEXT Entered') {
+						$.post("register.php", {
+							fname1: fname,
+							sname1: sname,
+							email1: email,
+							age1: age,
+							sex1: sex,
+							country1: country,
+							city1: city,
+							pcode1: pcode
+							}, function(data) {
+								if (data == 'You have Successfully Registered!') {
+									$("form")[0].reset();
+								}
+								alert(data);
+							});
+					}
 				}
 	});
 });

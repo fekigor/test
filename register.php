@@ -65,7 +65,7 @@
 					mail($email, MAIL_SUBJECT, $body);
 				}else
 				{
-					echo "During insert statament perform some Error! Technical problem!\n".$funame."\n".$qstr."\n";
+					echo "During insert statament perform some Error! Technical problem!\n";
 				}
 			}else{
 				echo "This email [".$email."] is already registered, Please try another email...";
@@ -75,6 +75,6 @@
 	} 
 	else
 	{
-		echo "POST return no data!";
+		echo "POST no return expacted data!";
 	}
 ?>

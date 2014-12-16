@@ -32,7 +32,6 @@ $(document).ready(function() {
 						data: dataString,
 						success: function(html) {
 							if (html == 'Right TEXT Entered') {
-								alert(html);
 									$.post("register.php", {
 									fname1: fname,
 									sname1: sname,
